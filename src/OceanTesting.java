@@ -70,15 +70,6 @@ public class OceanTesting {
         assertTrue(Empty);
 
     }
-
-    @Test
-    void testOceanShootAt() {
-
-
-
-    }
-
-
     //
     @Test
     void testGetShotsFired() {
