@@ -1,9 +1,28 @@
 public abstract class Ship {
 
+    /**
+     * The column (0 to 9) which contains the bow (front) of the ship.
+     */
     protected int bowColumn;
+
+    /**
+     * The row (0 to 9) which contains the bow (front) of the ship.
+     */
     protected int bowRow;
+
+    /**
+     * Hit is an array of four booleans telling whether that part of the ship has been hit.
+     */
     protected boolean[] hit;
+
+    /**
+     * True if the ship occupies a single row, false otherwise.
+     */
     protected boolean horizontal;
+
+    /**
+     * The number of tiles occupied by the ship.
+     */
     protected int length;
 
 
