@@ -34,7 +34,7 @@ public class EmptySea extends Ship{
      * This method can only be used to print out locations in the ocean that have been shot at;
      * it should not be used to print locations that have not been the target of a shot yet.
      * Since an EmptySea is empty by definition, targeting it will always result in a miss so return "-".
-     * @return
+     * @return "-" always, since nothing will be hit
      */
     @Override
     public String toString() {
