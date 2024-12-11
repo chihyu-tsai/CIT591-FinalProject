@@ -261,6 +261,48 @@ public class OceanTesting {
     }
 
 
+    @Test
+    void testOceanShootAt() {
+        Ocean ocean = new Ocean();
+        Ship sea = new EmptySea();
+        Ship submarine = new Submarine();
+        Ship cruiser = new Cruiser();
+        sea.placeShipAt(1, 2, true, ocean);
+        submarine.placeShipAt(3, 4, false, ocean);
+        cruiser.placeShipAt(5, 6, true, ocean);
+
+        //test if shotCount update works
+        boolean shot1 = ocean.shootAt(1, 2);
+        boolean shot2 = ocean.shootAt(3, 4);
+        boolean shot3 = ocean.shootAt(5, 6);
+        boolean shot4 = ocean.shootAt(5, 7);
+        boolean shot5 = ocean.shootAt(5, 8);
+        boolean shot6 = ocean.shootAt(5, 8);
+
+        int shots = ocean.getShotsFired();
+        assertEquals(6, shots);
+        assertFalse(shot1);
+        assertTrue(shot2);
+        assertTrue(shot5);
+        assertFalse(shot6);
+
+
+    }
+
+    @Test
+    void testShootEverything() {
+        Ocean o = new Ocean();
+        o.placeAllShipsRandomly();
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                o.shootAt(i, j);
+
+            }
+        }
+        assertEquals(10, o.getShipsSunk());
+    }
+
+
 
 }
 
