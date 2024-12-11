@@ -316,9 +316,10 @@ public class Ocean implements OceanInterface {
 	}
 
 
-
-
-
+	/**
+	 * This method will autogenerate fields for a ship
+	 * @param ship take in a ship and autogenerate values for its field
+	 */
 	private void randomGenerator(Ship ship) {
 
 		Random rand = new Random();
