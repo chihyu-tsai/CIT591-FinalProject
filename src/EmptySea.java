@@ -1,5 +1,8 @@
 public class EmptySea extends Ship{
 
+    /**
+     * Sets the inherited length variable and initializes the hit array, based on the size of this Empty Sea (1 tiles).
+     */
     public EmptySea() {
         this.length = 1;
         this.hit = new boolean[1];;
@@ -38,6 +41,9 @@ public class EmptySea extends Ship{
         return "-";
     }
 
+    /**
+     * @return "empty", indicating that this is an Empty sea tile.
+     */
     public String getShipType() {
         return "empty";
     }
