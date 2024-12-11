@@ -77,7 +77,10 @@ public abstract class Ship {
      */
     public boolean okToPlaceShipAt(int row, int column, boolean horizontal, Ocean ocean) {
         if (!horizontal) {
-            if (row + length > 10 || row < 0) {
+            if (row >= 10 || row + length > 10 || row < 0) {
+                return false;
+            }
+            if (column >= 10 || column + length > 10 || column < 0) {
                 return false;
             }
 
@@ -97,7 +100,10 @@ public abstract class Ship {
             return true;
         } else {
             // this is horizontal case
-            if (column + length > 10 || column < 0) {
+            if (row >= 10 || row + length > 10 || row < 0) {
+                return false;
+            }
+            if (column >= 10 || column + length > 10 || column < 0) {
                 return false;
             }
 
