@@ -24,21 +24,33 @@ public class ShipTesting {
 
     @Test
     void testGetBowRow() {
-        Ship ship = new Battleship();  // or any ship type
+        Ship ship1 = new Battleship();
+        Ship ship2 = new Cruiser();
+        Ship ship3 = new Destroyer();
+        Ship ship4 = new Submarine();
 
         // Test initial state
-        assertEquals(0, ship.getBowRow());
+        assertEquals(0, ship1.getBowRow());
+        assertEquals(0, ship2.getBowRow());
+        assertEquals(0, ship3.getBowRow());
+        assertEquals(0, ship4.getBowRow());
 
         // Test after placing ship
         Ocean ocean = new Ocean();
-        ship.placeShipAt(1, 2, true, ocean);
-        assertEquals(1, ship.getBowRow());
+        ship1.placeShipAt(1, 2, true, ocean);
+        assertEquals(1, ship1.getBowRow());
+        ship1.placeShipAt(2, 5, true, ocean);
+        assertEquals(2, ship1.getBowRow());
+        ship1.placeShipAt(4, 3, true, ocean);
+        assertEquals(4, ship1.getBowRow());
+        ship1.placeShipAt(7, 2, true, ocean);
+        assertEquals(7, ship1.getBowRow());
     }
 
 
     @Test
     void testGetBowColumn() {
-        Ship ship = new Battleship();  // or any ship type
+        Ship ship = new Battleship();
 
         // Test initial state
         assertEquals(0, ship.getBowColumn());
